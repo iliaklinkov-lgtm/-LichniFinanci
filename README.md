@@ -1,8 +1,4 @@
-# Finance
-
-Static finance site. Deploy to GitHub Pages or Netlify for hosting.
-
-How to run locally:
+За локално
 
 ```bash
 npx http-server -p 8080
