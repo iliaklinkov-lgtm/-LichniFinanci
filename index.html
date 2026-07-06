@@ -15,6 +15,10 @@
       <button id="logoutBtn" title="Излез" class="logout-btn">🚪 Излез</button>
     </div>
 
+    <div class="download-offline" style="text-align:center; margin: 1rem;">
+      <a href="Finance.zip" download style="display:inline-block; padding:0.75rem 1.2rem; background:#0a66ff; color:#fff; border-radius:8px; text-decoration:none;">Download ZIP for offline use</a>
+    </div>
+
     <div class="app-container">
       <div class="input-container">
         <div class="header">
@@ -120,7 +124,7 @@
     <script>
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
-          navigator.serviceWorker.register('/service-worker.js')
+          navigator.serviceWorker.register('service-worker.js')
             .then(reg => console.log('Service Worker registered:', reg.scope))
             .catch(err => console.warn('SW registration failed:', err));
         });

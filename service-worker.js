@@ -1,12 +1,13 @@
 const CACHE_NAME = 'finance-v1';
 const ASSETS = [
-  '/',
-  '/index.html',
-  '/login-page.html',
-  '/src/index.css',
-  '/login-page1.css',
-  '/main.js',
-  '/login-page2.js'
+  './',
+  './index.html',
+  './login-page.html',
+  './src/index.css',
+  './login-page1.css',
+  './main.js',
+  './login-page2.js',
+  './manifest.json'
 ];
 
 self.addEventListener('install', e => {
