@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="bg">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Вход - Лични Финанси</title>
+    <link rel="stylesheet" href="./login-page1.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <div class="login-card" id="loginCard">
+        <div class="login-header">
+          <h1>Лични Финанси</h1>
+          <p>Управление на вашите финанси</p>
+        </div>
+
+        <form id="loginForm" class="login-form">
+          <div class="form-group">
+            <input 
+              type="email" 
+              id="loginEmail" 
+              placeholder="Email адрес" 
+              required 
+            />
+          </div>
+
+          <div class="form-group">
+            <input 
+              type="password" 
+              id="loginPassword" 
+              placeholder="Парола" 
+              required 
+            />
+          </div>
+
+          <div class="remember-forgot">
+            <label class="remember-me">
+              <input type="checkbox" id="rememberMe" />
+              <span>Запомни ме</span>
+            </label>
+            <a href="#" class="forgot-password">Забравил си паролa?</a>
+          </div>
+
+          <button type="submit" class="login-btn">Вход</button>
+        </form>
+
+        <div class="signup-link">
+          <p>Нямаш акаунт? <a href="#" id="showSignupBtn">Създай един</a></p>
+        </div>
+
+        <div id="loginMessage" class="message"></div>
+      </div>
+
+      <!-- Signup Form -->
+      <div class="login-card hidden" id="signupCard">
+        <div class="login-header">
+          <h1>Създай Акаунт</h1>
+          <p>Регистрирай се за управление на финансите</p>
+        </div>
+
+        <form id="signupForm" class="login-form">
+          <div class="form-group">
+            <input 
+              type="text" 
+              id="signupName" 
+              placeholder="Пълно име" 
+              required 
+            />
+          </div>
+
+          <div class="form-group">
+            <input 
+              type="email" 
+              id="signupEmail" 
+              placeholder="Email адрес" 
+              required 
+            />
+          </div>
+
+          <div class="form-group">
+            <input 
+              type="password" 
+              id="signupPassword" 
+              placeholder="Парола" 
+              required 
+            />
+          </div>
+
+          <div class="form-group">
+            <input 
+              type="password" 
+              id="signupConfirmPassword" 
+              placeholder="Потвърди парола" 
+              required 
+            />
+          </div>
+
+          <button type="submit" class="login-btn">Създай Акаунт</button>
+        </form>
+
+        <div class="signup-link">
+          <p>Вече имаш акаунт? <a href="#" id="showLoginBtn">Вход</a></p>
+        </div>
+
+        <div id="signupMessage" class="message"></div>
+      </div>
+    </div>
+
+    <script src="login-page2.js"></script>
+  </body>
+</html>

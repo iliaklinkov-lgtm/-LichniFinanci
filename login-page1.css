@@ -1,0 +1,247 @@
+:root {
+  --primary-color: rgb(30, 108, 53);
+  --secondary-color: white;
+  --danger-color: red;
+  --card-background: rgba(255, 255, 255, 0.15);
+  --border-color: rgba(221, 219, 219, 0.3);
+  --text-dark: rgb(0, 0, 0);
+  --text-light: rgb(100, 100, 100);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-image: url('src/Mana.jpg');
+  background-color: rgb(0, 0, 0);
+  color: var(--text-dark);
+  line-height: 1.6;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.login-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(221, 219, 219, 0.3);
+  border-radius: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 3rem 2rem;
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.login-header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.login-header p {
+  font-size: 1rem;
+  color: var(--text-light);
+}
+
+.login-form {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: all 300ms ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(30, 108, 53, 0.1);
+  background-color: var(--secondary-color);
+}
+
+.remember-forgot {
+
+
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.remember-me {
+
+
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-dark);
+}
+
+
+
+
+.remember-me input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.forgot-password {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color 300ms ease;
+  font-weight: 500;
+}
+
+.forgot-password:hover {
+  color: rgb(43, 146, 71);
+  text-decoration: underline;
+}
+
+
+
+.login-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 550;
+  cursor: pointer;
+  transition: all 300ms ease;
+  margin-top: 0.5rem;
+}
+
+
+
+
+.login-btn:hover {
+
+
+  background-color: rgb(43, 146, 71);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(30, 108, 53, 0.3);
+}
+
+.login-btn:active {
+  transform: translateY(-1px);
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-dark);
+}
+
+.signup-link a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 300ms ease;
+}
+
+.signup-link a:hover {
+  color: rgb(43, 146, 71);
+  text-decoration: underline;
+}
+
+.hidden {
+  display: none;
+}
+
+.message {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 500;
+  display: none;
+}
+
+
+
+
+
+
+.message.show {
+  display: block;
+}
+
+.message.success {
+  background-color: rgba(0, 128, 0, 0.2);
+  color: rgb(0, 100, 0);
+  border: 1px solid rgba(0, 128, 0, 0.4);
+}
+
+
+
+.message.error {
+  background-color: rgba(255, 0, 0, 0.2);
+  color: rgb(200, 0, 0);
+  border: 1px solid rgba(255, 0, 0, 0.4);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
+  .login-card {
+    padding: 2rem 1.5rem;
+    max-width: 100%;
+  }
+
+  .login-header h1 {
+    font-size: 2rem;
+  }
+
+  .login-header p {
+    font-size: 0.9rem;
+  }
+
+  .remember-forgot {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: flex-start;
+  }
+}

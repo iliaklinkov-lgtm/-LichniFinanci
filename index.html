@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="bg">
+  <head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/manifest.json">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Лични Финанси</title>
+    <link rel="stylesheet" href="./src/index.css" />
+  </head>
+  <body>
+    <div class="toggle-category-btn">
+      <button id="toggleCategoryBtn" title="Управление на категориите">⚙️</button>
+      <button id="logoutBtn" title="Излез" class="logout-btn">🚪 Излез</button>
+    </div>
+
+    <div class="app-container">
+      <div class="input-container">
+        <div class="header">
+          <h1>Лични Финанси</h1>
+          
+        </div>
+
+        
+
+        
+        <div id="balance">€ 0.00</div>
+
+        <form id="transactionForm">
+          <input type="text" id="description" 
+          placeholder="Описание" required />
+          <select id="categorySelect" required>
+            <option value="">Избери категория</option>
+          </select>
+          <input type="number" id="Amount" 
+          placeholder="Сума" step="0.01"
+          required />
+          <select id="type" required>
+            <option value="income">Приходи</option>
+            <option value="expense">Разходи</option>
+          </select>
+          <button class="AddBtn">Добави Транзакция</button>
+        </form>
+
+
+
+      </div>
+      
+
+
+
+      <div class="transaction-container">
+        <h2>История на Транзакциите</h2>
+        
+        
+        
+        <div id="transactionlist">
+          <div class="transaction income">
+            <span>Заплата</span>
+            <span class="transaction-amount-container">€ 500
+              <button class="DeleteBtn">Изтрий</button> </span>
+            
+          </div>
+          
+            
+          
+
+
+
+
+
+        </div>
+        <script src="main.js"></script>
+      </div>
+      
+
+    <!-- Categories section at bottom -->
+    <div id="categorySection" class="category-section">
+      <div class="category-section-content">
+        <h3>Управление на Категориите</h3>
+        <div id="category" class="category-input-group">
+          <input id="categoryInput" type="text" placeholder="Нова категория" />
+          <button id="addCategoryBtn" class="addBtn">+ Добави</button>
+        </div>
+
+        <div id="categoryTableContainer">
+          <table id="categoryTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Категория</th>
+                <th>Действие</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="chart-container">
+  <div class="chart-header">
+    <h2>📊 Месечни Приходи & Разходи</h2>
+    <span>по месец</span>
+  </div>
+  <div class="chart-canvas-wrap">
+    <canvas id="monthlyChart"></canvas>
+    <div id="chartEmptyState">
+      <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#437a22" stroke-width="1.5">
+        <rect x="3" y="3" width="18" height="18" rx="3"/>
+        <path d="M3 9h18M9 21V9"/>
+      </svg>
+      <span>Добави транзакции, за да видиш графиката</span>
+    </div>
+  </div>
+</div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/service-worker.js')
+            .then(reg => console.log('Service Worker registered:', reg.scope))
+            .catch(err => console.warn('SW registration failed:', err));
+        });
+      }
+    </script>
+
+
+  </body>
+</html>
